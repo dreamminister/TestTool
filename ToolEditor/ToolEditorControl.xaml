@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="TestTool.ToolEditorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="300" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="6">
+            <TextBlock x:Name="ToolTypeName" HorizontalAlignment="Center" Margin="0,6" FontSize="16" FontWeight="Bold">Typename</TextBlock>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Margin="6" Grid.Row="0">Name:</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" Margin="6"></TextBox>
+
+                <TextBlock Margin="6" Grid.Row="1">Length:</TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="6"></TextBox>
+
+                <TextBlock Margin="6" Grid.Row="2">Width:</TextBlock>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="6"></TextBox>
+
+                <TextBlock Margin="6" Grid.Row="3">Diameter:</TextBlock>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="6"></TextBox>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
