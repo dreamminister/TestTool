@@ -54,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\FakeToolData.cs" />
+    <Compile Include="Model\Tool.cs" />
     <Compile Include="ToolEditorControl.xaml.cs">
       <DependentUpon>ToolEditorControl.xaml</DependentUpon>
     </Compile>

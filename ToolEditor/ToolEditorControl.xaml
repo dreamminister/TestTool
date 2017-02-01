@@ -7,7 +7,7 @@
 
     <Grid>
         <StackPanel Orientation="Vertical" Margin="6">
-            <TextBlock x:Name="ToolTypeName" HorizontalAlignment="Center" Margin="0,6" FontSize="16" FontWeight="Bold">Typename</TextBlock>
+            <Label x:Name="ToolTypeName" HorizontalAlignment="Center" Margin="0,6" FontSize="16" FontWeight="Bold">Typename</Label>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
@@ -21,16 +21,16 @@
                     <ColumnDefinition Width="7*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Margin="6" Grid.Row="0">Name:</TextBlock>
+                <Label Margin="6" Grid.Row="0">Name:</Label>
                 <TextBox Grid.Row="0" Grid.Column="1" Margin="6"></TextBox>
 
-                <TextBlock Margin="6" Grid.Row="1">Length:</TextBlock>
+                <Label Margin="6" Grid.Row="1">Length:</Label>
                 <TextBox Grid.Row="1" Grid.Column="1" Margin="6"></TextBox>
 
-                <TextBlock Margin="6" Grid.Row="2">Width:</TextBlock>
+                <Label Margin="6" Grid.Row="2">Width:</Label>
                 <TextBox Grid.Row="2" Grid.Column="1" Margin="6"></TextBox>
 
-                <TextBlock Margin="6" Grid.Row="3">Diameter:</TextBlock>
+                <Label Margin="6" Grid.Row="3">Diameter:</Label>
                 <TextBox Grid.Row="3" Grid.Column="1" Margin="6"></TextBox>
 
             </Grid>
