@@ -55,7 +55,7 @@
         
         <Grid x:Name="LeftPanel" Grid.Row="2" Grid.Column="0">
             <ListView x:Name="ToolEditorContainer" ItemsSource="{Binding Tools}" SelectionMode="Single" SelectedItem="{Binding Path=SelectedTool}"
-                     VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="Auto" Width="Auto"  BorderThickness="0">
+                     VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" Height="Auto" Width="Auto"  BorderThickness="0" Margin="3">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
