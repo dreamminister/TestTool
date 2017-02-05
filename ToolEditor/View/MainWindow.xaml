@@ -55,7 +55,7 @@
                         <Border BorderBrush="Black" BorderThickness="3" Width="Auto" HorizontalAlignment="Stretch">
                             <StackPanel Orientation="Vertical" Margin="6">
                                 <Label x:Name="ToolTypeName" HorizontalAlignment="Center" Margin="0,6" FontSize="16" FontWeight="Bold">
-                                    <TextBlock Text="{Binding ToolType}" />
+                                    <TextBlock Text="{Binding Path=ToolType}" />
                                 </Label>
                                 <Grid>
                                     <Grid.RowDefinitions>
@@ -97,14 +97,15 @@
 
         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold" Margin="10,0,0,0"><Run Text="Data Table"/></TextBlock>
 
-        <DataGrid x:Name="ToolTable" Grid.Column="1" Grid.Row="2" ItemsSource="{Binding Tools}" SelectedItem="{Binding SelectedTool}" ColumnWidth="Auto"
+        <DataGrid x:Name="ToolTable" Grid.Column="1" Grid.Row="2" ItemsSource="{Binding Path=Tools, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" SelectedItem="{Binding SelectedTool}" ColumnWidth="Auto"
                   CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" Margin="10,0,10,6" Height="340" VerticalAlignment="Bottom">
+                        
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Path=Id, Mode=OneWay}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name, Mode=TwoWay}" />
-                <DataGridTextColumn Header="Length" Binding="{Binding Path=Length, Mode=TwoWay}" />
-                <DataGridTextColumn Header="Width" Binding="{Binding Path=Width, Mode=TwoWay}" />
-                <DataGridComboBoxColumn Header="Type" ItemsSource="{Binding Source={StaticResource ToolTypeEnum}, Mode=OneTime}" SelectedValueBinding="{Binding Path=ToolType, Mode=TwoWay}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Length" Binding="{Binding Path=Length, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Width" Binding="{Binding Path=Width, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridComboBoxColumn Header="Type" ItemsSource="{Binding Source={StaticResource ToolTypeEnum}, Mode=OneTime}" SelectedValueBinding="{Binding Path=ToolType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
