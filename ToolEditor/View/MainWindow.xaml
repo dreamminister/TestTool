@@ -29,9 +29,10 @@
         </Grid.ColumnDefinitions>
 
         <ToolBar Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0">
-            <Button x:Name="AddToolBtn" Margin="6,0" Width="Auto" Height="Auto" Content="Add Tool"/>
-            <Button x:Name="RemoveToolBtn" Margin="6,0" Content="Remove Tool"/>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+            <Button x:Name="AddToolBtn" Command="{Binding AddToolCommand}" Margin="6,0" Width="Auto" Height="Auto" Content="Add Tool"/>
+            <Button x:Name="RemoveToolBtn" IsEnabled="{Binding Path=IsAnyToolSelected}" Command="{Binding RemoveToolCommand}" CommandParameter="{Binding ElementName=ToolTable, Path=SelectedItems}"
+                    Margin="6,0" Content="Remove Tool"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Label Margin="6,0">
                     <Run Text="Common Diameter"/>
                 </Label>
@@ -43,15 +44,19 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,6">
             <TextBlock HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="10,0,0,0"><Run Text="Tool Editor"/></TextBlock>
 
-            <StackPanel x:Name="ToolEditorContainer" Margin="0,6"/>
-            <local:ToolEditorControl/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="ToolEditorContainer" Margin="0,6">
+                    <local:ToolEditorControl/>
+                </StackPanel>
+            </ScrollViewer>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,6">
             <TextBlock HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="10,0,0,0"><Run Text="Data Table"/></TextBlock>
 
             <StackPanel x:Name="DataTableContainer" Margin="0,6">
-                <DataGrid x:Name="ToolTable" ItemsSource="{Binding Tools}" Height="322" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False">
+                <DataGrid x:Name="ToolTable" ItemsSource="{Binding Tools}" SelectedItem="{Binding SelectedTool}" 
+                          Height="322" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding Path=Id, Mode=OneWay}" />
                         <DataGridTextColumn Header="Name" Binding="{Binding Path=Name, Mode=TwoWay}" />

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace TestTool.Model
 {
-    public class ToolBase : INotifyPropertyChanged
+    public abstract class PropertyBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged<T>([CallerMemberName]string caller = null)

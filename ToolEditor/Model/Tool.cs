@@ -2,7 +2,7 @@
 
 namespace TestTool.Model
 {
-    public class Tool : ToolBase
+    public class Tool : PropertyBase
     {
         private readonly Guid _id = Guid.NewGuid();
         public Guid Id

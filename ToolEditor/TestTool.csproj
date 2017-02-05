@@ -55,6 +55,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data\FakeToolData.cs" />
+    <Compile Include="Helpers\AddToolCommand.cs" />
+    <Compile Include="Helpers\RemoveToolCommand.cs" />
     <Compile Include="Model\Tool.cs" />
     <Compile Include="Model\ToolBase.cs" />
     <Compile Include="Model\ToolTypeEnum.cs" />
@@ -106,9 +108,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
