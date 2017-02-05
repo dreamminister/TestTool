@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:TestTool" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="TestTool.MainWindow"
-        xmlns:mod="clr-namespace:TestTool.Model"
+        xmlns:helpers="clr-namespace:TestTool.Helpers"
         xmlns:vm="clr-namespace:TestTool.ViewModel"
         DataContext="{DynamicResource ViewModelMain}"
         Title="Test Tool" Height="453" Width="757">
@@ -12,7 +12,7 @@
 
         <ObjectDataProvider x:Key="ToolTypeEnum" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="mod:ToolTypeEnum" />
+                <x:Type TypeName="helpers:ToolTypeEnum" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
 

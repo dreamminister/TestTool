@@ -59,7 +59,7 @@
     <Compile Include="Helpers\RemoveToolCommand.cs" />
     <Compile Include="Model\Tool.cs" />
     <Compile Include="Model\ToolBase.cs" />
-    <Compile Include="Model\ToolTypeEnum.cs" />
+    <Compile Include="Helpers\ToolTypeEnum.cs" />
     <Compile Include="ViewModel\ViewModelMain.cs" />
     <Compile Include="View\ToolEditorControl.xaml.cs">
       <DependentUpon>ToolEditorControl.xaml</DependentUpon>
