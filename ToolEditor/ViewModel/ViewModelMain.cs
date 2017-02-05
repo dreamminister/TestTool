@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using TestTool.Data;
 using TestTool.Helpers;
@@ -14,6 +15,28 @@ namespace TestTool.ViewModel
         public bool IsAnyToolSelected { get { return SelectedTool != null; } }
 
         private Tool _selectedTool = null;
+
+        private int _commonDiameter = 0;
+        public int CommonDiameter
+        {
+            get { return _commonDiameter; }
+            set
+            {
+                if (_commonDiameter == value)
+                    return;
+
+                _commonDiameter = value;
+                UpdateToolsDiameter(value);
+                OnPropertyChanged<int>();
+            }
+        }
+
+        private void UpdateToolsDiameter(int value)
+        {
+            foreach (var tool in Tools)
+                tool.Diameter = value;
+        }
+
         public Tool SelectedTool
         {
             get { return _selectedTool; }

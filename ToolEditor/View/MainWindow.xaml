@@ -37,8 +37,8 @@
                 <Label Margin="6,0">
                     <Run Text="Common Diameter"/>
                 </Label>
-                <Slider x:Name="DiameterSlider" Width="200" Minimum="0" Maximum="1000" Margin="6,4,6,0" />
-                <TextBlock x:Name="SliderOutput" Margin="6,4,6,0" Text="{Binding Value, ElementName=DiameterSlider}"/>
+                <Slider x:Name="DiameterSlider" Width="200" Minimum="0" Maximum="1000" Value="{Binding Path=CommonDiameter, Mode=OneWayToSource}" IsSnapToTickEnabled="True" TickFrequency="1" Margin="6,4,6,0" />
+                <TextBlock x:Name="SliderOutput" Margin="6,4,6,0" Text="{Binding CommonDiameter}"/>
             </StackPanel>
         </ToolBar>
 
@@ -47,7 +47,8 @@
         <Grid x:Name="LeftPanel" Grid.Row="2" Grid.Column="0">
 
 
-            <ListView x:Name="ToolEditorContainer" VerticalAlignment="Stretch" ItemsSource="{Binding Tools}" HorizontalContentAlignment="Stretch" Height="Auto" Width="Auto"  BorderThickness="0">
+            <ListView x:Name="ToolEditorContainer" VerticalAlignment="Stretch" ItemsSource="{Binding Tools}" HorizontalContentAlignment="Stretch" Height="Auto" Width="Auto"  BorderThickness="0"
+                     SelectionMode="Single">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
