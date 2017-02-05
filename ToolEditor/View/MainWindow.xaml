@@ -59,7 +59,7 @@
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Black" BorderThickness="3" Width="Auto" HorizontalAlignment="Stretch">
+                        <Border BorderBrush="Black" BorderThickness="3" Width="Auto" HorizontalAlignment="Stretch" Margin="3">
                             <StackPanel Orientation="Vertical" Margin="6">
                                 <Label x:Name="ToolTypeName" HorizontalAlignment="Center" Margin="0,6" FontSize="16" FontWeight="Bold">
                                     <TextBlock Text="{Binding Path=ToolType}" />
