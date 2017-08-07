@@ -20,7 +20,7 @@ namespace TestTool.Model
                 if (!string.IsNullOrEmpty(value))
                 {
                     _name = value;
-                    OnPropertyChanged<string>();
+                    OnPropertyChanged();
                 }
             }
         }
@@ -35,7 +35,7 @@ namespace TestTool.Model
                     return;
 
                 _length = value;
-                OnPropertyChanged<int>();
+                OnPropertyChanged();
             }
         }
 
@@ -49,7 +49,7 @@ namespace TestTool.Model
                     return;
 
                 _width = value;
-                OnPropertyChanged<int>();
+                OnPropertyChanged();
             }
         }
 
@@ -63,7 +63,7 @@ namespace TestTool.Model
                     return;
 
                 _diameter = value;
-                OnPropertyChanged<int>();
+                OnPropertyChanged();
             }
         }
 
@@ -77,7 +77,7 @@ namespace TestTool.Model
                     return;
 
                 _toolType = value;
-                OnPropertyChanged<ToolTypeEnum>();
+                OnPropertyChanged();
             }
         }
     }

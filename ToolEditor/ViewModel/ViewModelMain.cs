@@ -27,7 +27,7 @@ namespace TestTool.ViewModel
 
                 _commonDiameter = value;
                 UpdateToolsDiameter(value);
-                OnPropertyChanged<int>();
+                OnPropertyChanged();
             }
         }
 
@@ -46,8 +46,8 @@ namespace TestTool.ViewModel
                 if (_selectedTool != value)
                 {
                     _selectedTool = value;
-                    OnPropertyChanged<object>();
-                    OnPropertyChanged<bool>("IsAnyToolSelected");
+                    OnPropertyChanged();
+                    OnPropertyChanged("IsAnyToolSelected");
                 }
             }
         }

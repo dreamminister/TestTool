@@ -6,9 +6,10 @@ namespace TestTool.Model
     public abstract class PropertyBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged<T>([CallerMemberName]string caller = null)
+        protected void OnPropertyChanged([CallerMemberName]string caller = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(caller));
         }
     }
 }
